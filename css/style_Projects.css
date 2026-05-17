@@ -1,0 +1,411 @@
+
+:root{
+  --bg:#F2F3EE;
+  --green-deep:#2D6A4F;
+  --green-mid:#40916C;
+  --green-light:#52B788;
+  --orange:#C06000;
+  --text:#1a1f16;
+  --text-sub:#4a5240;
+  --border:#d0d4c8;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  background:var(--bg);
+  font-family:'Noto Sans KR',sans-serif;
+  color:var(--text);
+}
+
+/* ── HEADER ── */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 60px;
+  border-bottom:1px solid var(--border);
+  background:#ffffff;
+  position:relative;
+  z-index:100;
+}
+
+.logo{
+  font-family:Rajdhani;
+  font-weight:700;
+  font-size:26px;
+  letter-spacing:2px;
+  text-decoration:none;
+  color:var(--text);
+}
+
+nav{ display:flex; align-items:center; }
+
+.nav-item{
+  position:relative;
+  margin-left:28px;
+}
+
+.nav-item > a{
+  text-decoration:none;
+  font-family:'Fira Code';
+  font-size:13px;
+  color:#6b7560;
+  letter-spacing:1px;
+  padding:6px 0;
+  display:flex;
+  align-items:center;
+  gap:4px;
+  transition:.2s;
+  cursor:pointer;
+}
+
+.nav-item > a:hover{ color:var(--green-deep); }
+
+.nav-item.active > a{ color:var(--green-deep); font-weight:500; }
+
+.nav-item.active:not(.has-drop) > a::after{
+  content:''; position:absolute; bottom:-3px; left:0; right:0;
+  height:2px; background:var(--green-deep); border-radius:2px;
+}
+
+.nav-item.active.has-drop > a::before{
+  content:''; position:absolute; bottom:-3px; left:0; right:0;
+  height:2px; background:var(--green-deep); border-radius:2px;
+}
+
+.nav-item.has-drop > a .chevron{ font-size:11px; transition:.2s; display:inline-block; }
+.nav-item:hover > a .chevron{ transform:rotate(180deg); }
+
+.dropdown{
+  position:absolute; top:100%; padding-top:20px; left:50%;
+  transform:translateX(-50%); background:transparent;
+  opacity:0; pointer-events:none; transition:opacity .2s; z-index:200;
+}
+
+.nav-item:hover .dropdown{ opacity:1; pointer-events:all; }
+
+.dropdown-inner{
+  background:#fff; border:1px solid var(--border); border-radius:8px;
+  overflow:hidden; box-shadow:0 12px 32px rgba(0,0,0,.1); min-width:160px;
+}
+
+.dropdown a{
+  display:block; padding:10px 18px; font-family:'Fira Code'; font-size:11px;
+  color:#4a5240; text-decoration:none; transition:.15s; white-space:nowrap;
+  border-bottom:1px solid #f0f2ec;
+}
+
+.dropdown a:last-child{ border-bottom:none; }
+.dropdown a:hover{ background:var(--bg); color:var(--green-deep); padding-left:22px; }
+
+/* ── PAGE HERO ── */
+.page-hero{
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  padding:48px 80px 0;
+}
+
+.page-hero-top{
+  display:flex; align-items:baseline; gap:16px; margin-bottom:28px;
+}
+
+.page-hero-top h1{
+  font-family:Rajdhani; font-size:42px; font-weight:700; margin:0; letter-spacing:1px;
+}
+
+.page-hero-top span{
+  font-family:'Fira Code'; font-size:12px; color:var(--green-mid); letter-spacing:2px;
+}
+
+.sub-nav{ display:flex; gap:0; }
+
+.sub-nav a{
+  font-family:'Fira Code'; font-size:12px; color:#6b7560; text-decoration:none;
+  padding:12px 24px; border-bottom:2px solid transparent; transition:.2s; letter-spacing:1px;
+}
+
+.sub-nav a:hover{ color:var(--green-deep); }
+
+.sub-nav a.active{
+  color:var(--green-deep); border-bottom-color:var(--green-deep); font-weight:500;
+}
+
+/* ── CONTENT ── */
+.research-wrap{
+  max-width:1400px;
+  margin:0 auto;
+  padding:56px 80px;
+}
+
+/* ── 검색 + 필터 ── */
+.search-bar{
+  display:flex; gap:12px; margin-bottom:32px; align-items:center;
+}
+
+.search-input-wrap{ position:relative; flex:1; }
+
+.search-input-wrap svg{
+  position:absolute; left:14px; top:50%; transform:translateY(-50%);
+  color:#9aa090; pointer-events:none;
+}
+
+.search-input{
+  width:100%; padding:11px 14px 11px 40px; border:1px solid var(--border);
+  border-radius:8px; font-family:'Noto Sans KR',sans-serif; font-size:14px;
+  background:#fff; color:var(--text); outline:none; transition:.2s;
+}
+
+.search-input:focus{
+  border-color:var(--green-mid);
+  box-shadow:0 0 0 3px color-mix(in srgb, var(--green-mid) 12%, transparent);
+}
+
+.filter-select{
+  padding:11px 32px 11px 16px; border:1px solid var(--border); border-radius:8px;
+  font-family:'Fira Code'; font-size:12px; background:#fff; color:var(--text-sub);
+  outline:none; cursor:pointer; transition:.2s; appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7560' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 10px center;
+}
+
+.filter-select:focus{ border-color:var(--green-mid); }
+
+/* 결과 카운트 */
+.result-count{
+  font-family:'Fira Code'; font-size:11px; color:var(--text-sub);
+  margin-bottom:28px; letter-spacing:.5px;
+}
+
+.result-count span{ color:var(--green-deep); font-weight:500; }
+
+/* ── 연도 그룹 ── */
+.year-group{ margin-bottom:48px; }
+
+.year-label{
+  font-family:Rajdhani; font-size:28px; font-weight:700; color:var(--green-deep);
+  margin-bottom:16px; display:flex; align-items:center; gap:12px;
+}
+
+.year-label::after{ content:''; flex:1; height:1px; background:var(--border); }
+
+/* ── 논문 아이템 ── */
+.pub-list{ display:flex; flex-direction:column; }
+
+.pub-item{
+  display:flex; gap:20px; padding:18px 0;
+  border-bottom:1px solid #f0f2ec; align-items:flex-start;
+}
+
+.pub-item:last-child{ border-bottom:none; }
+
+/* 번호 */
+.pub-num{
+  font-family:'Fira Code'; font-size:14px; color:var(--border);
+  min-width:32px; padding-top:4px; text-align:right; flex-shrink:0;
+}
+
+.pub-content{ flex:1; }
+
+/* 제목 */
+.pub-title{
+  font-size:15px; font-weight:600; color:var(--text); line-height:1.55; margin-bottom:5px;
+}
+
+/* 저자 */
+.pub-authors{
+  font-size:13px; color:var(--text-sub); margin-bottom:6px; line-height:1.5;
+}
+
+.pub-authors strong{ color:var(--green-deep); font-weight:600; }
+
+/* 저널 + 연도 */
+.pub-meta{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+
+.pub-journal{ font-family:'Fira Code'; font-size:11px; color:var(--orange); }
+
+.pub-year-tag{
+  font-family:'Fira Code'; font-size:10px; color:var(--text-sub);
+  background:var(--bg); border:1px solid var(--border); padding:2px 8px; border-radius:4px;
+}
+
+/* 국문/영문 구분 태그 */
+.pub-lang{
+  font-family:'Fira Code'; font-size:9px; padding:2px 7px; border-radius:4px;
+}
+
+.pub-lang.ko{
+  background:color-mix(in srgb, var(--green-deep) 8%, white);
+  color:var(--green-deep);
+  border:1px solid color-mix(in srgb, var(--green-deep) 20%, white);
+}
+
+.pub-lang.en{
+  background:color-mix(in srgb, #5b6cf0 8%, white);
+  color:#5b6cf0;
+  border:1px solid color-mix(in srgb, #5b6cf0 20%, white);
+}
+
+/* 숨김 */
+.pub-item.hidden{ display:none; }
+.year-group.hidden{ display:none; }
+
+
+/* =========================================================
+   PROJECTS PAGE EXTENSION
+   - Projects 전용 타임라인/역할 배지 스타일
+   ========================================================= */
+
+/* ── Projects 전용 타임라인 스타일 ── */
+
+/* 역할 배지 */
+.role-badge {
+  font-family: 'Fira Code', monospace;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.role-pi {
+  background: color-mix(in srgb, var(--green-mid) 12%, white);
+  color: var(--green-deep);
+  border: 1px solid color-mix(in srgb, var(--green-mid) 30%, white);
+}
+.role-co {
+  background: color-mix(in srgb, var(--orange) 10%, white);
+  color: var(--orange);
+  border: 1px solid color-mix(in srgb, var(--orange) 25%, white);
+}
+.role-res {
+  background: color-mix(in srgb, #888 10%, white);
+  color: #555;
+  border: 1px solid color-mix(in srgb, #888 20%, white);
+}
+
+/* 타임라인 컨테이너 */
+.timeline-wrap {
+  position: relative;
+  padding-left: 36px;
+}
+.timeline-wrap::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--border);
+}
+
+/* 연도 그룹 */
+.tl-year-group {
+  margin-bottom: 48px;
+}
+.tl-year-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--green-deep);
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.tl-year-label::before {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--green-mid);
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px var(--green-mid);
+}
+
+/* 프로젝트 아이템 */
+.proj-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px 20px;
+  margin-bottom: 10px;
+  background: white;
+  border: 1px solid var(--border);
+  border-left: 3px solid transparent;
+  border-radius: 8px;
+  transition: border-color .2s, box-shadow .2s;
+  position: relative;
+}
+.proj-item::before {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 22px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+}
+.proj-item:hover {
+  border-left-color: var(--green-light);
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+.proj-item.hidden { display: none; }
+
+.proj-num {
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+  color: var(--border);
+  min-width: 32px;
+  text-align: center;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.proj-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.proj-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.proj-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.proj-client {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 12px;
+  color: var(--text-sub);
+}
+.proj-client::before {
+  content: '▸ ';
+  color: var(--green-light);
+  font-size: 10px;
+}
+
+.proj-period {
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  color: var(--text-sub);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.tl-year-group.hidden { display: none; }
