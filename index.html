@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>T&M LAB</title>
+<link rel="stylesheet" href="css/style_home.css">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Noto+Sans+KR:wght@300;400;600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+
+
+
+
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="index.html">T&M LAB</a>
+  <nav>
+
+    <div class="nav-item active">
+      <a href="index.html">HOME</a>
+    </div>
+
+    <div class="nav-item has-drop">
+      <a href="Members/Advisor.html">MEMBERS <span class="chevron">▾</span></a>
+      <div class="dropdown">
+        <div class="dropdown-inner">
+          <a href="Members/Advisor.html">Advisor</a>
+          <a href="members/Advisee.html">Advisee</a>
+          <a href="members/Postdoc.html">Postdoc</a>
+          <a href="members/Alumni.html">Alumni</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-item has-drop">
+      <a href="Research/Publications.html">RESEARCH <span class="chevron">▾</span></a>
+      <div class="dropdown">
+        <div class="dropdown-inner">
+          <a href="Research/Publications.html">Publications</a>
+          <a href="Research/Patents.html">Patents</a>
+          <a href="Research/Awards.html">Awards</a>
+          <a href="Research/Conference.html">Conference Papers</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="Projects.html">PROJECTS</a>
+    </div>
+
+    <div class="nav-item">
+      <a href="About.html">ABOUT T&M</a>
+    </div>
+
+  </nav>
+</header>
+
+<section class="hero">
+
+  <div class="hero-wrap">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">CBNU · URBAN ENGINEERING</div>
+      <h1>
+        TRANS<span class="outline">PORT</span> &<br>
+        <span style="color:#2D6A4F">MOBILITY</span> LAB
+      </h1>
+      <p>
+        누구에게나 형평성 있고 지속가능한 적재적소의 모빌리티 서비스를 실현합니다.<br>
+        충북대학교 도시공학과 교통모빌리티 연구실 (Transportation & Mobility Laboratory) 입니다.
+      </p>
+    </div>
+  </div>
+
+  <!-- ↓ src를 실제 영상 파일 경로로 교체하세요 -->
+  <div class="hero-video">
+    <video autoplay muted loop playsinline>
+      <source src="home.mp4" type="video/mp4">
+    </video>
+  </div>
+
+</section>
+
+<section class="stats">
+  <a class="stat" href="Research/Publications.html">
+    <div class="stat-num">51<span class="stat-plus">+</span></div>
+    <div class="stat-label">PUBLICATIONS</div>
+  </a>
+  <a class="stat" href="Research/Patents.html">
+    <div class="stat-num">4<span class="stat-plus">+</span></div>
+    <div class="stat-label">PATENTS</div>
+  </a>
+  <a class="stat" href="Members/Advisor.html">
+    <div class="stat-num">28<span class="stat-plus">+</span></div>
+    <div class="stat-label">MEMBERS</div>
+  </a>
+  <a class="stat" href="Projects.html">
+    <div class="stat-num">95<span class="stat-plus">+</span></div>
+    <div class="stat-label">PROJECTS</div>
+  </a>
+</section>
+
+<section class="news">
+
+  <div class="news-title">NEWS <span>Updates</span></div>
+
+  <div class="news-outer">
+
+    <button class="news-arrow" id="leftBtn" onclick="slideNews(-1)">
+      <svg width="26" height="26" viewBox="0 0 24 24">
+        <path d="M15 18L9 12L15 6" stroke="black" stroke-width="2" fill="none"/>
+      </svg>
+    </button>
+
+    <div class="news-viewport">
+      <div class="news-slider" id="newsSlider">
+      
+        <div class="news-card">
+          <img class="news-img" src="img/home/@ 2025 대한교통학회 추계학술대회.jpg">
+          <div class="news-body">
+            <div class="news-card-title">@ 2025 대한교통학회 추계학술대회</div>
+            <div class="news-card-date">(2025.11.12 – 11.14)</div>
+          </div>
+        </div>      
+
+        <div class="news-card">
+          <img class="news-img" src="img/home/Accepted the two manuscripts to be presented in 2025 Transportation Research Board at Washington D.C..jpg">
+          <div class="news-body">
+            <div class="news-card-title">Accepted the two manuscripts to be presented in 2025 Transportation Research Board at Washington D.C.</div>
+            <div class="news-card-date">(2025.01.06 – 01.09)</div>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <img class="news-img" src="img/home/카미시호로정 도시재생 내 모빌리티 특화도시 방문.jpg">
+          <div class="news-body">
+            <div class="news-card-title">카미시호로정 도시재생 내 모빌리티 특화도시 방문</div>
+            <div class="news-card-date">(2024.09.23 – 09.27)</div>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <img class="news-img" src="img/home/훗카이도청 모빌리티 담당 관계자 회의.jpg">
+          <div class="news-body">
+            <div class="news-card-title">훗카이도청 모빌리티 담당 관계자 회의</div>
+            <div class="news-card-date">(2024.09.23 – 09.27)</div>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <img class="news-img" src="img/home/The joint meeting with Prof. Tanvir and his students @ California State University at Long Beach.jpg">
+          <div class="news-body">
+            <div class="news-card-title">The joint meeting with Prof. Tanvir and his students @ California State University at Long Beach</div>
+            <div class="news-card-date">(2024.07.21 – 07.27)</div>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <img class="news-img" src="img/home/@ California Environemental Protection Agency.jpg">
+          <div class="news-body">
+            <div class="news-card-title">@ California Environemental Protection Agency</div>
+            <div class="news-card-date">(2024.07.21 – 07.27)</div>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <img class="news-img" src="img/home/@ IEEE PES annual meeting.jpg">
+          <div class="news-body">
+            <div class="news-card-title">@ IEEE PES annual meeting</div>
+            <div class="news-card-date">(2024.07.21 – 07.27)</div>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <img class="news-img" src="img/home/AAG annual meeting @ Hawaii.jpg">
+          <div class="news-body">
+            <div class="news-card-title">AAG annual meeting @ Hawaii</div>
+            <div class="news-card-date">(2024.04.16 – 04.19)</div>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <img class="news-img" src="img/home/@ 2024 Transportation Research Board.jpg">
+          <div class="news-body">
+            <div class="news-card-title">@ 2024 Transportation Research Board</div>
+            <div class="news-card-date">(2024.01.06 – 01.11)</div>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <img class="news-img" src="img/home/@ 2024 CES.jpg">
+          <div class="news-body">
+            <div class="news-card-title">@ 2024 CES</div>
+            <div class="news-card-date">(2024.01.06 – 01.11)</div>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <img class="news-img" src="img/home/@ 2023 대한교통학회 추계학술대회.jpg">
+          <div class="news-body">
+            <div class="news-card-title">@ 2023 대한교통학회 추계학술대회</div>
+            <div class="news-card-date">(2023.10.10 – 10.11)</div>
+          </div>
+        </div>
+        
+        <div class="news-card">
+          <img class="news-img" src="img/home/@ Monash University Malaysia.jpg">
+          <div class="news-body">
+            <div class="news-card-title">@ Monash University Malaysia</div>
+            <div class="news-card-date">(2023.09.07)</div>
+          </div>
+        </div>
+        
+        <div class="news-card">
+          <img class="news-img" src="img/home/@ 2023 Conference of East Asian Society for Transportation Studies.jpg">
+          <div class="news-body">
+            <div class="news-card-title">@ 2023 Conference of East Asian Society for Transportation Studies</div>
+            <div class="news-card-date">(2023.09.04 – 09.06)</div>
+          </div>
+        </div>
+                
+        <div class="news-card">
+          <img class="news-img" src="img/home/Business meeting appoints @ Austrailia.PNG">
+          <div class="news-body">
+            <div class="news-card-title">Business meeting appoints @ Austrailia</div>
+            <div class="news-card-date">(2023.08.08 – 08.11)</div>
+          </div>
+        </div>
+                        
+        <div class="news-card">
+          <img class="news-img" src="img/home/2023 ASCE Transportation Conference .jpg">
+          <div class="news-body">
+            <div class="news-card-title">2023 ASCE Transportation Conference</div>
+            <div class="news-card-date">(June 2023)</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <button class="news-arrow" id="rightBtn" onclick="slideNews(1)">
+      <svg width="26" height="26" viewBox="0 0 24 24">
+        <path d="M9 6L15 12L9 18" stroke="black" stroke-width="2" fill="none"/>
+      </svg>
+    </button>
+
+  </div>
+
+  <div class="news-dots" id="newsDots"></div>
+
+</section>
+
+<script src="js/news-slider.js"></script>
+
+</body>
+</html>
