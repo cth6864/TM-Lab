@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T&M LAB - Member Profile</title>
+<link rel="stylesheet" href="css/style_Member_Profile.css">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Noto+Sans+KR:wght@300;400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/common-header.css">
+<link rel="stylesheet" href="../css/mobile-fix.css">
+</head>
+
+<body>
+<div id="site-header"></div>
+
+<div class="page-hero">
+  <div class="page-hero-top">
+    <h1>MEMBERS</h1>
+    <span id="profileHeroLabel">T&M LAB</span>
+  </div>
+  <nav class="sub-nav">
+    <a href="Advisor.html" data-profile-tab="Advisor">Advisor</a>
+    <a href="Advisee.html" data-profile-tab="Advisee">Advisee</a>
+    <a href="Postdoc.html" data-profile-tab="Postdoc">Postdoc</a>
+    <a href="Alumni.html" data-profile-tab="Alumni">Alumni</a>
+  </nav>
+</div>
+
+<main class="profile-wrap">
+  <a class="back-link" id="backLink" href="Advisee.html">Back to members</a>
+
+  <section class="profile-hero-card">
+    <div class="profile-photo-frame">
+      <img id="profilePhoto" src="" alt="">
+      <div class="profile-photo-placeholder" id="profilePhotoPlaceholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="profile-main">
+      <div class="profile-eyebrow" id="profileCategory">MEMBER</div>
+      <div class="profile-name-row">
+        <h2 id="profileNameKo">-</h2>
+        <span id="profileNameEn"></span>
+      </div>
+      <p class="profile-role" id="profileRole"></p>
+      <a class="profile-email" id="profileEmail" href="#">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/>
+        </svg>
+        <span></span>
+      </a>
+    </div>
+
+    <div class="profile-intro">
+      <h3>Introduction</h3>
+      <p id="profileBio"></p>
+    </div>
+  </section>
+<!-- 프로젝트 영역 임시 숨김 시작
+  <section class="profile-section" id="projectsSection">
+    <div class="section-head">
+      <div>
+        <h3>Research Projects</h3>
+        <span id="projectsCount"></span>
+      </div>
+      <div class="section-controls">
+        <button aria-label="Previous research projects" data-carousel="projectsTrack" data-direction="prev" type="button">&lt;</button>
+        <button aria-label="Next research projects" data-carousel="projectsTrack" data-direction="next" type="button">&gt;</button>
+      </div>
+    </div>
+    <div class="profile-carousel" id="projectsTrack"></div>
+  </section>
+프로젝트 영역 임시 숨김 끝 -->
+  <section class="profile-section" id="patentsSection">
+    <div class="section-head">
+      <div>
+        <h3>Patents</h3>
+        <span id="patentsCount"></span>
+      </div>
+      <div class="section-controls">
+        <button aria-label="Previous patents" data-carousel="patentsTrack" data-direction="prev" type="button">&lt;</button>
+        <button aria-label="Next patents" data-carousel="patentsTrack" data-direction="next" type="button">&gt;</button>
+      </div>
+    </div>
+    <div class="profile-carousel wide-carousel" id="patentsTrack"></div>
+  </section>
+
+  <section class="profile-section" id="publicationsSection">
+    <div class="section-head">
+      <div>
+        <h3>Publications</h3>
+        <span id="publicationsCount"></span>
+      </div>
+      <div class="section-controls">
+        <button aria-label="Previous publications" data-carousel="publicationsTrack" data-direction="prev" type="button">&lt;</button>
+        <button aria-label="Next publications" data-carousel="publicationsTrack" data-direction="next" type="button">&gt;</button>
+      </div>
+    </div>
+    <div class="profile-carousel wide-carousel" id="publicationsTrack"></div>
+  </section>
+
+  <section class="profile-section" id="conferenceSection">
+    <div class="section-head">
+      <div>
+        <h3>Conference Papers</h3>
+        <span id="conferenceCount"></span>
+      </div>
+      <div class="section-controls">
+        <button aria-label="Previous conference papers" data-carousel="conferenceTrack" data-direction="prev" type="button">&lt;</button>
+        <button aria-label="Next conference papers" data-carousel="conferenceTrack" data-direction="next" type="button">&gt;</button>
+      </div>
+    </div>
+    <div class="profile-carousel wide-carousel" id="conferenceTrack"></div>
+  </section>
+</main>
+
+<script src="../js/site-header.js"></script>
+<script src="js/member-profile-data.js"></script>
+<script src="js/member-profile-auto-index.js"></script>
+<script src="js/member-profile-render.js"></script>
+</body>
+</html>
+
