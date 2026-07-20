@@ -1,0 +1,190 @@
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 860px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 20px;
+  }
+
+  header nav {
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px 18px;
+  }
+
+  .nav-item {
+    margin-left: 0;
+  }
+
+  .dropdown {
+    left: 0;
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  header nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nav-item > a {
+    font-size: 12px;
+  }
+
+  .dropdown {
+    position: static;
+    display: none;
+    padding-top: 8px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  .nav-item:hover .dropdown,
+  .nav-item:focus-within .dropdown {
+    display: block;
+  }
+
+  .dropdown-inner {
+    min-width: 100%;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .08);
+  }
+
+  .hero,
+  .page-hero {
+    height: auto;
+    min-height: 0;
+    padding: 36px 20px;
+  }
+
+  .hero-wrap,
+  .page-hero-top,
+  .advisor-layout,
+  .research-app,
+  .projects-app {
+    display: block;
+  }
+
+  .hero-inner {
+    max-width: none;
+  }
+
+  .hero h1,
+  .page-hero h1 {
+    font-size: clamp(44px, 15vw, 64px);
+    line-height: .95;
+  }
+
+  .hero p,
+  .page-hero p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .hero-video {
+    position: relative;
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .stats,
+  .news,
+  .research-wrap,
+  .members-wrap,
+  .about-wrap,
+  .publication-main,
+  .projects-main {
+    width: auto;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .news-outer,
+  .news-viewport,
+  .news-slider {
+    max-width: 100%;
+  }
+
+  .news-card {
+    min-width: min(82vw, 360px);
+  }
+
+  .sub-nav,
+  .topic-chip-row,
+  .search-panel,
+  .projects-search-panel,
+  .search-bar,
+  .year-range-controls {
+    flex-wrap: wrap;
+  }
+
+  .search-panel,
+  .projects-search-panel,
+  .search-bar {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .publication-sidebar,
+  .projects-sidebar {
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .paper-grid,
+  .project-list,
+  .pub-list,
+  .member-grid,
+  .advisee-grid,
+  .alumni-grid,
+  .photo-grid,
+  .photo-grid.cols-2,
+  .photo-grid.cols-3,
+  .photo-grid.cols-4,
+  .photo-grid.cols-5,
+  .photo-grid.cols-6 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .pub-item,
+  .patent-item,
+  .proj-item,
+  .pub-card,
+  .member-card,
+  .advisor-profile-card {
+    max-width: 100%;
+  }
+
+  .advisor-photo-col,
+  .advisor-bio-col {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .advisor-photo-wrap {
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
