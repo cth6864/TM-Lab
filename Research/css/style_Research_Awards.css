@@ -1,0 +1,28 @@
+
+
+/* Awards 전용 추가 스타일 */
+.award-type{
+  font-family:'Fira Code';
+  font-size:9px;
+  letter-spacing:1.5px;
+  padding:3px 8px;
+  border-radius:4px;
+}
+
+.award-type.prize{
+  background:color-mix(in srgb, var(--orange) 10%, white);
+  color:var(--orange);
+  border:1px solid color-mix(in srgb, var(--orange) 25%, white);
+}
+
+.award-type.commendation{
+  background:color-mix(in srgb, #5b6cf0 10%, white);
+  color:#5b6cf0;
+  border:1px solid color-mix(in srgb, #5b6cf0 25%, white);
+}
+
+.award-venue{
+  font-family:'Fira Code';
+  font-size:11px;
+  color:var(--text-sub);
+}
